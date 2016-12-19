@@ -12,6 +12,6 @@ $exp = AB\Experiment::create('flow', [
 
 $engine = AB\engine([$exp], new Echolog());
 
-foreach (explode(',', 'a,b,c,d,e,f,g,h,i') as $c) {
-    var_dump($engine->activate('flow', $c. rand()));
+foreach (range(1, 10) as $i) {
+    echo $engine->activate('flow', 'id_'.$i.rand()) . PHP_EOL;
 }
